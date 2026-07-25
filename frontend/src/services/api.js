@@ -2,7 +2,11 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL:
-    "http://localhost:5000/api",
+    import.meta.env.VITE_API_URL ||
+    "https://leadflow-backend-h31u.onrender.com/api",
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 API.interceptors.request.use(

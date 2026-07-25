@@ -125,45 +125,45 @@ const getLeads = async ({
             status;
     }
 
-/*
-SEARCH
-*/
+    /*
+    SEARCH
+    */
 
-if (search && search.trim()) {
+    if (search && search.trim()) {
 
-    const searchTerm =
-        search
-            .trim()
-            .replace(
-                /[.*+?^${}()|[\]\\]/g,
-                "\\$&"
-            );
+        const searchTerm =
+            search
+                .trim()
+                .replace(
+                    /[.*+?^${}()|[\]\\]/g,
+                    "\\$&"
+                );
 
-    filter.$or = [
+        filter.$or = [
 
-        {
-            name: {
-                $regex: `^${searchTerm}`,
-                $options: "i",
+            {
+                name: {
+                    $regex: `^${searchTerm}`,
+                    $options: "i",
+                },
             },
-        },
 
-        {
-            email: {
-                $regex: `^${searchTerm}`,
-                $options: "i",
+            {
+                email: {
+                    $regex: `^${searchTerm}`,
+                    $options: "i",
+                },
             },
-        },
 
-        {
-            company: {
-                $regex: `^${searchTerm}`,
-                $options: "i",
+            {
+                company: {
+                    $regex: `^${searchTerm}`,
+                    $options: "i",
+                },
             },
-        },
 
-    ];
-}
+        ];
+    }
 
     /*
     DATABASE QUERY
