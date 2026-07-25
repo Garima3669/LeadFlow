@@ -1,0 +1,643 @@
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboard-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f5f7fb;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  background: #111827;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px 16px;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  z-index: 1000;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 10px 30px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #2563eb;
+  border-radius: 10px;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-logo h2 {
+  margin: 0;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.sidebar-logo span {
+  display: block;
+
+  font-size: 12px;
+  color: #9ca3af;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  border-radius: 8px;
+
+  color: #d1d5db;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #1f2937;
+  color: white;
+}
+
+.nav-item.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* =========================
+   SIDEBAR BOTTOM
+========================= */
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px;
+
+  border-top: 1px solid #374151;
+
+  margin-bottom: 10px;
+}
+
+.user-avatar,
+.topbar-avatar {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  overflow: hidden;
+}
+
+.user-info strong {
+  font-size: 13px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-info span {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.logout-btn {
+  width: 100%;
+
+  padding: 10px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #1f2937;
+
+  color: #d1d5db;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background: #374151;
+  color: white;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+  margin-left: 250px;
+
+  width: calc(100% - 250px);
+
+  min-height: 100vh;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+  min-height: 72px;
+
+  box-sizing: border-box;
+
+  background: white;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 14px 30px;
+}
+
+.topbar h1 {
+  margin: 0;
+
+  font-size: 20px;
+
+  color: #111827;
+}
+
+.topbar p {
+  margin: 4px 0 0;
+
+  font-size: 13px;
+
+  color: #6b7280;
+}
+
+.topbar-user {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.topbar-user strong {
+  display: block;
+
+  font-size: 13px;
+
+  color: #111827;
+
+  white-space: nowrap;
+}
+
+.topbar-user span {
+  font-size: 11px;
+
+  color: #6b7280;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page-content {
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  width: 100%;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 210px;
+    padding: 20px 12px;
+  }
+
+  .main-content {
+    margin-left: 210px;
+    width: calc(100% - 210px);
+  }
+
+  .page-content {
+    padding: 24px;
+  }
+
+  .topbar {
+    padding: 14px 24px;
+  }
+
+}
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 70px;
+
+    padding: 20px 10px;
+
+    align-items: center;
+  }
+
+  /* Hide logo text */
+
+  .sidebar-logo {
+    justify-content: center;
+
+    padding: 0 0 25px;
+  }
+
+  .sidebar-logo h2,
+  .sidebar-logo span {
+    display: none;
+  }
+
+  /* Navigation */
+
+  .sidebar-nav {
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    justify-content: center;
+
+    padding: 12px 8px;
+  }
+
+  /* Hide navigation text only */
+
+  .nav-item span {
+    display: none;
+  }
+
+  /* Bottom user area */
+
+  .user-card {
+    justify-content: center;
+
+    padding: 12px 0;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .logout-btn {
+    padding: 10px 5px;
+
+    font-size: 0;
+  }
+
+  .logout-btn::before {
+    content: "↪";
+
+    font-size: 18px;
+  }
+
+  /* Main */
+
+  .main-content {
+    margin-left: 70px;
+
+    width: calc(100% - 70px);
+  }
+
+  .topbar {
+    padding: 14px 20px;
+  }
+
+  .page-content {
+    padding: 20px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 550px) {
+
+  .sidebar {
+    width: 100%;
+
+    min-height: auto;
+    height: 64px;
+
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+
+    padding: 6px 8px;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    border-top: 1px solid #374151;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     HIDE DESKTOP LOGO
+  ========================= */
+
+  .sidebar-logo {
+    display: none;
+  }
+
+
+  /* =========================
+     NAVIGATION
+  ========================= */
+
+  .sidebar-nav {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    gap: 4px;
+  }
+
+  .nav-item {
+    width: auto;
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 10px 5px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+  }
+
+  .nav-item span {
+    display: none;
+  }
+
+
+  /* =========================
+     HIDE USER INFORMATION
+  ========================= */
+
+  .user-card {
+    display: none;
+  }
+
+
+  /* =========================
+     SIDEBAR BOTTOM
+  ========================= */
+
+  .sidebar-bottom {
+    display: block;
+
+    width: auto;
+
+    margin: 0;
+
+    padding: 0;
+  }
+
+
+  /* =========================
+     LOGOUT BUTTON
+  ========================= */
+
+  .logout-btn {
+    width: 44px;
+
+    height: 44px;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #374151;
+
+    border-radius: 8px;
+
+    background: #1f2937;
+
+    color: #d1d5db;
+
+    font-size: 0;
+
+    cursor: pointer;
+  }
+
+  .logout-btn::before {
+    content: "↪";
+
+    font-size: 20px;
+  }
+
+  .logout-btn:hover {
+    background: #374151;
+
+    color: white;
+  }
+
+
+  /* =========================
+     MAIN CONTENT
+  ========================= */
+
+  .main-content {
+    width: 100%;
+
+    margin-left: 0;
+
+    padding-bottom: 70px;
+  }
+
+
+  /* =========================
+     TOPBAR
+  ========================= */
+
+  .topbar {
+    min-height: 64px;
+
+    padding: 12px 16px;
+  }
+
+  .topbar h1 {
+    font-size: 17px;
+  }
+
+  .topbar p {
+    display: none;
+  }
+
+  .topbar-user strong {
+    display: none;
+  }
+
+  .topbar-user span {
+    display: none;
+  }
+
+  .topbar-avatar {
+    width: 34px;
+
+    height: 34px;
+  }
+
+
+  /* =========================
+     PAGE
+  ========================= */
+
+  .page-content {
+    padding: 16px;
+  }
+
+}
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+  .sidebar {
+    height: 60px;
+  }
+
+  .nav-item {
+    padding: 8px 3px;
+  }
+
+  .main-content {
+    padding-bottom: 65px;
+  }
+
+  .page-content {
+    padding: 12px;
+  }
+
+  .topbar {
+    padding: 10px 12px;
+  }
+
+  .topbar h1 {
+    font-size: 16px;
+  }
+
+}
